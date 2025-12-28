@@ -4,13 +4,13 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer>
-        <div>
+    <footer className="bg-gray-200">
+        <div  className="">
             <Image src="/" alt="logo" width={100} height={100} />
         </div>
-        <div>
+        <div className="text-blue-600">
             <h2>Quick Links</h2>
-            <ul>
+            <ul >
                 <li><Link href="/about">About Us</Link></li>
                 <li><Link href="/discover">Discover</Link></li>
                 <li><Link href="/privacy">Privacy Policy</Link></li>
