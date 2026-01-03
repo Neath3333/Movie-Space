@@ -42,7 +42,7 @@ export default function MovieCard({ movie }) {
     </div>
   );
 }
-movie.propTypes = {
+MovieCard.propTypes = {
   movie: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
