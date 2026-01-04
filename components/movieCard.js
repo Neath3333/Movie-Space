@@ -11,7 +11,7 @@ export default function MovieCard({ movie }) {
     : "/placeholder.jpg";
 
   return (
-    <div className='flex items-center justify-center min-h-screen bg-[#000] py-20'>
+    <div className='flex items-center justify-center py-20'>
       <div className='mx-auto bg-white rounded-3xl shadow-xl'>
         <div className="rounded-3xl max-w-[270px] shadow-sm bg-white">
           <Image
