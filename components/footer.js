@@ -13,17 +13,15 @@ export default function Footer() {
         </div>
 
         <div className=" pt-10">
-          <h2 className="text-gray-900 mb-2 text-center font-semibold">Quick Links</h2>
+          <h2 className="text-xl ml-20 text-gray-900 mb-2 font-semibold">Quick Links</h2>
           <ul className="text-blue-600 ml-[80px] space-x-10 font-light">
             <li><Link href="/about" >About Us</Link></li>
-            <li><Link href="/discove">Discover</Link></li>
-            <li><Link href="/privacy">Privacy Policy</Link></li>
-            <li><Link href="/terms" >Terms of Service</Link></li>
+            <li><Link href="/discover">Discover</Link></li>
+            <li><Link href="/privacy_policy">Privacy Policy</Link></li>
+            <li><Link href="/terms_service" >Terms of Service</Link></li>
             <li><Link href="/setting">Settings</Link></li>
           </ul>
         </div>
-
-   
         <div></div>
 
       </div>
