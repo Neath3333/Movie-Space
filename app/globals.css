@@ -38,3 +38,9 @@ body::before{
   inset: 0;
   position: fixed
 }
+h2{
+  @apply font-semibold text-2xl;
+}
+h3{
+  @apply font-semibold text-xl;
+}

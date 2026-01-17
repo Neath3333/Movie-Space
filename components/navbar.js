@@ -18,7 +18,7 @@
     const pathname = usePathname();
 
     return (
-      <nav className="flex p-6 bg-white/50 text-black items-center justify-center">
+      <nav className="w-full flex p-6 bg-white/50 text-black items-center justify-center">
         <Image src="/logo.png" alt="logo" width={100} height={100} />
         <h1 className="mr-130 pl-10 text-xl font-bold">MOVIE SPACE</h1>
         <ul className="flex space-x-10">
