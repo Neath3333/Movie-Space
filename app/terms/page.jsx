@@ -169,7 +169,43 @@ export default function terms() {
           <li>Add or remove functionality</li>
           <li>Temporarily or permanently suspend the Service</li>
         </ul>   
-       <p> </p>
+       <p>We are not liable for any loss caused by such changes </p>
+      </div><br />
+      <div>
+        <h2>11. Termination</h2>
+        <p>We reserve the right to suspend or terminate accounts that:</p>
+        <ul className="list-disc pl-10">
+          <li>Violate these Terms</li>
+          <li>Abuse the Service</li>
+          <li>Attempt to misuse APIs or automate prohibited actions</li>
+        </ul><br />   
+       <p>You may stop using the Service at any time.</p>
+      </div><br />
+      <div>
+        <h2>12. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law:</p>
+        <ul className="list-disc pl-10">
+          <li>We are not liable for indirect, incidental, or consequential damages.</li>
+          <li>We are not responsible for data loss, recommendation accuracy, or third-party service failures.</li>
+        </ul><br />   
+       <p>Movie recommendations are opinions, not guarantees.</p>
+      </div><br />
+      <div>
+        <h2>13. Intellectual Property</h2>
+        <ul className="list-disc pl-10">
+          <li>The Service’s code, design, and branding belong to the project owner.</li>
+          <li>Movie data, posters, and ratings belong to their respective providers (e.g., TMDB).</li>
+        </ul><br />   
+       <p>Nothing in these Terms transfers ownership of third-party content.</p>
+      </div><br />
+      <div>
+        <h2>14. Changes to These Terms</h2>
+        <p>We may update these Terms from time to time.</p> 
+        <p>Continued use of the Service after changes means you accept the updated Terms.</p>
+      </div><br />
+      <div>
+        <h2>15. Contact</h2>
+        <p>For questions or issues related to these Terms, contact the project owner through the repository or official project page.</p>
       </div><br />
     </div>
   );
