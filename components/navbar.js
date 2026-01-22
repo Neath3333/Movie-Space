@@ -5,6 +5,7 @@
   import Image from "next/image";
   import Link from "next/link";
   import { usePathname } from 'next/navigation';
+  import SearchBar from "./SearchBar";
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -20,7 +21,7 @@
     return (
       <nav className="w-full flex p-6 bg-white/50 text-black items-center justify-center">
         <Image src="/logo.png" alt="logo" width={100} height={100} />
-        <h1 className="mr-130 pl-10 text-xl font-bold">MOVIE SPACE</h1>
+        <h1 className="mr-30 pl-10 text-xl font-bold">MOVIE SPACE</h1>
         <ul className="flex space-x-10">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
@@ -40,6 +41,7 @@
             );
           })}
         </ul>
+        <SearchBar />
       </nav>
     );
   }
