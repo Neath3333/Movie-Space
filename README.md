@@ -3,16 +3,30 @@
 The main goal is to work on a project that called "Movie Space" that allow user to leave a review on specific movie , view the other user reviews and get recommedation of movie that match user taste.
 
 ## Stack
-**Frontend**
+**Auth**
+- NextAuth.js
+
+**Frontend/Backend**
 - Tailwind
 - Javascript 
-- Next Js
+- Next Js + React
+
 **Database**
 - Prisma ORM
 - SQLite
-**Backend**
-- Node Js
 
+**Data ingestion**
+- Node Js + Cheerio
+
+**API**
+- TMDB
+- HTTP API viaa server-side or client fetch 
+
+**Auto Posting** (Optional)
+- Internal API ( Next Js route handlers )
+- Optional bound connectors (e.g. Discord, webhook,generic "webhook URL")
+
+**
 
 ## Features
 
