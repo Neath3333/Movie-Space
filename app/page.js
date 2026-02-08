@@ -1,22 +1,23 @@
 import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+// import Image from 'next/image';
+// import Link from 'next/link';
 import { getTrendingMovies } from "@/lib/tmdb";
 import MovieCard from "@/components/MovieCard";
 
 //import MovieCard from '../components/MovieCard';
 
 
-export default function Home() {
-
+export default async function Home() {
+const data = await getTrendingMovies();
+const movies = data.results;
 return (
-    <div className='bg-blue-900'>
+    <div className="p-4">
    {/* <MovieCard  /> */}
     <h1 className="text-2xl font-bold mb-4">
         Trending Movies Today
       </h1>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-        {trendingMovies.slice(0, 10).map((movie) => (
+        {movies.slice(0, 10).map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>
