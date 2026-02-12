@@ -43,3 +43,5 @@ next-env.d.ts
 #docs
 IMPLEMENTATION_PLAN.md
 /lib/generated/prisma
+
+dev.db
