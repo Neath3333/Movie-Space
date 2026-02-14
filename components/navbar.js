@@ -18,7 +18,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-0 z-50 w-full flex p-6 bg-white/40 text-black items-center justify-center ">
+    <nav className="sticky top-0 z-50 w-full flex p-6 bg-[#FFB7C5]/70 text-black items-center justify-center ">
       <Image src="/logo.png" alt="logo" width={100} height={100} />
       <h1 className="mr-30 pl-10 text-xl font-bold">MOVIE SPACE</h1>
 
@@ -66,7 +66,7 @@ export default function Navbar() {
                 href={link.href}
                 className={
                   isActive
-                    ? 'text-lime-600 font-bold border-b-2 border-lime-600'
+                    ? 'text-lime-400 font-bold border-b-2 '
                     : 'hover:text-lime-200 transition-colors'
                 }
               >
