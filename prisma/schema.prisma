@@ -29,3 +29,16 @@ model Review{
   user User @relation(fields: [userId], references: [id])
   createdAt DateTime @default(now())
 }
+
+model Like{
+  id String @id @default(cuid())
+  uderId String 
+  tmdbId Int
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  //to prevent the duplication likes
+  @@unique([userId,tmdbId])
+  @@index([tmdbId])
+}
