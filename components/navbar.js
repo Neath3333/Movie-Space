@@ -42,7 +42,7 @@ export default function Navbar() {
 
                 {/* Dropdown */}
                 <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200">
-                  <Link href="/setting/profile" className="block px-4 py-2 hover:bg-gray-200">
+                  <Link href="/profiles" className="block px-4 py-2 hover:bg-gray-200">
                     Profile
                   </Link>
                   <Link href="/setting/privacy" className="block px-4 py-2 hover:bg-gray-200">
