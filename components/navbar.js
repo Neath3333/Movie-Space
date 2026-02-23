@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import SearchBar from "./SearchBar";
 import React from "react";
+import AuthButton from "./auth-button";
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -76,8 +77,8 @@ export default function Navbar() {
           );
         })}
       </ul>
-
-      <SearchBar />
+w      <SearchBar />
+      <AuthButton />
     </nav>
   );
 }
