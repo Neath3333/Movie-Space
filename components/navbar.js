@@ -77,7 +77,7 @@ export default function Navbar() {
           );
         })}
       </ul>
-w      <SearchBar />
+     <SearchBar />
       <AuthButton />
     </nav>
   );
