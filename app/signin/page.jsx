@@ -1,15 +1,16 @@
-import react from "react";
-import { signIn } from "next-auth/react";
+'use client';
+import React from "react";
+// import { signIn } from "next-auth/react";
+import { useState } from "react";
 
 export default function SignInPage() {
-    return ();
-        <div className="flex items-center justify-center min-h-screen bg-gray-900">
-            <button
-                onClick={() => signIn("google")}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            >
-                Sign in with Google
-            </button>
-        </div>
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    return (
+         <form>
+            <input value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input value={password} onChange={(e) => setPassword(e.target.value)}/>
+            <button>Login</button>
+         </form>
     )
-}
+};
