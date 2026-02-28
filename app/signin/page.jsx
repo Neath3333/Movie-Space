@@ -7,10 +7,12 @@ export default function SignInPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     return (
+        <div className="">
          <form>
             <input value={email} onChange={(e) => setEmail(e.target.value)} />
             <input value={password} onChange={(e) => setPassword(e.target.value)}/>
             <button>Login</button>
          </form>
+         </div>
     )
 };

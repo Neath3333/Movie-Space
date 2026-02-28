@@ -14,7 +14,7 @@ export default function MovieCard({ movie }) {
   return (
     <div>
       <Link href={`/movies/${movie.id}`}>
-        <div className="w-48 relative group overflow-hidden rounded-lg mb-10">
+        <div className="w-48 relative group overflow-hidden rounded-lg m-10">
           <Image
             src={imageUrl}
             width={200}
