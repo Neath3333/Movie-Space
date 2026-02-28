@@ -10,17 +10,16 @@ export default function MovieCard({ movie }) {
   const imageUrl = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
     : "placeholder.jpg";
-
   return (
     <div>
       <Link href={`/movies/${movie.id}`}>
-        <div className="w-48 relative group overflow-hidden rounded-lg m-10">
+        <div className="w-48 relative group overflow-hidden rounded-lg mx-auto">
           <Image
             src={imageUrl}
             width={200}
-            height={300}
+            height={280}
             alt={movie.title}
-            className=" object-cover transition-transform duration-700 ease-out group-hover:scale-115 group-hover:rotate-1"
+            className=" object-cover transition-transform duration-700 ease-out group-hover:scale-105 group-hover:rotate-1"
           />
           <div
             className="bg-lime-400/50 backdrop-blur-md border-t border-white/20 absolute bottom-0 left-0 w-full p-2 

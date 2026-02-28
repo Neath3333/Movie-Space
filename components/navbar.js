@@ -21,9 +21,9 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full flex p-6 bg-[#FFB7C5]/70 text-black items-center justify-center ">
       <Image src="/logo.png" alt="logo" width={100} height={100} />
-      <h1 className="mr-30 pl-10 text-xl font-bold">MOVIE SPACE</h1>
+      <h1 className="mr-20 pl-8 text-xl font-bold">MOVIE SPACE</h1>
 
-      <ul className="flex space-x-10">
+      <ul className="flex space-x-8">
         {navLinks.map((link) => {
           const isActive = pathname === link.href;
 
@@ -43,16 +43,16 @@ export default function Navbar() {
 
                 {/* Dropdown */}
                 <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200">
-                  <Link href="/profiles" className="block px-4 py-2 hover:bg-gray-200">
+                  <Link href="/profiles" className="block px-2 py-2 hover:bg-gray-200">
                     Profile
                   </Link>
-                  <Link href="/setting/privacy" className="block px-4 py-2 hover:bg-gray-200">
+                  <Link href="/setting/privacy" className="block px-2 py-2 hover:bg-gray-200">
                     Ratings & Watchlist
                   </Link>
-                  <Link href="/setting/theme" className="block px-4 py-2 hover:bg-gray-200">
+                  <Link href="/setting/theme" className="block px-2 py-2 hover:bg-gray-200">
                     Theme
                   </Link>
-                  <Link href="/setting/about" className="block px-4 py-2 hover:bg-gray-200">
+                  <Link href="/setting/about" className="block px-2 py-2 hover:bg-gray-200">
                     About
                   </Link>
                 </div>
@@ -77,8 +77,10 @@ export default function Navbar() {
           );
         })}
       </ul>
-     <SearchBar />
-      <AuthButton />
+     <SearchBar/>
+     <div className="ml-8">
+    <AuthButton />
+    </div>
     </nav>
   );
 }

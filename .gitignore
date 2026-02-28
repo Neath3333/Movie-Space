@@ -45,3 +45,8 @@ IMPLEMENTATION_PLAN.md
 /lib/generated/prisma
 
 dev.db
+
+# audio files (too large for GitHub)
+public/*.mp3
+public/*.wav
+public/*.m4a
