@@ -38,8 +38,14 @@ export default function SearchBar(){
             )}
             {showResults && searchResults.length > 0 && (
                 <div>
+                    {searchResults.map((movie) => (
+                        <div key={movie.id}>
+                            {/* <p>{movie.title}</p>
+                            <p>{new Date(movie.release_date).getFullYear()}</p> */}
+                        </div>
+                    ))}
                     <div>
-                        
+
                     </div>
                 </div>
 
