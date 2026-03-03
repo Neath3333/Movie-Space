@@ -8,10 +8,10 @@ import BackgroundMusic from "../components/BackgroundMusic";
 export default function RootLayout({children}) {
   return (
     <html lang="en">
-      <body>
+      <body className="min-h-screen flex flex-col">
         <Providers>
         <Navbar />
-        <main className="container mx-auto px-2 py-8">
+        <main className="container mx-auto px-2 py-8 flex-grow">
           {children}
         </main>
         <Footer />
