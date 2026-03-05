@@ -20,14 +20,13 @@ export default async function MoviePage({ params }) {
     ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
     : "/public/logo1.jpg";
   return (
-    <div className="relative">
-      {/* Backdrop Image - Full Width */}
-      <div className="absolute top-0 left-0 right-0 h-[70vh] -z-10">
+    <div className="">
+      <div className=" relative min-h-screen bg-center bg-cover bg-no-repeat">
         <Image
           src={backdropUrl}
           alt={movie.title}
           fill
-          className="object-cover opacity-85"
+          className="opacity-85"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent"></div>
@@ -60,7 +59,7 @@ export default async function MoviePage({ params }) {
       </div>
 
       {/* Similar Movies Section */}
-      <div className="container mx-auto px-4 py-8 relative z-10">
+      <div className=" mx-auto px-4 py-8 relative z-10">
         <h2 className="text-5xl font-black my-5 text-lime-300 underline">Similar Movies</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 bg-white/30 rounded-2xl py-10 px-5">
           {movies.slice(0, 10).map((movie) => (
