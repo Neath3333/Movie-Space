@@ -6,7 +6,7 @@ export default async function Home() {
 const data = await getTrendingMovies();
 const movies = data.results;
 return (
-    <div className="">
+    <div className=" px-5 py-8 flex-grow">
    {/* <MovieCard  /> */}
     <h1 className="text-5xl font-black my-5 text-lime-300 underline">
         Trending Movies Today

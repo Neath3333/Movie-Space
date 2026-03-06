@@ -11,7 +11,7 @@ export default function RootLayout({children}) {
       <body className="min-h-screen flex flex-col">
         <Providers>
         <Navbar />
-        <main className="container mx-auto px-2 py-8 flex-grow">
+        <main>
           {children}
         </main>
         <Footer />
