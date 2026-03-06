@@ -20,31 +20,32 @@ export default async function MoviePage({ params }) {
     ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
     : "/public/logo1.jpg";
   return (
-    <div className="">
-      <div className=" relative min-h-screen bg-center bg-cover bg-no-repeat">
+    <div className="relative mx-auto w-[100%]">
+      {/* Backdrop Section - Full width with specific height */}
+      <div className="relative h-[750px]  bg-center bg-no-repeat flex">
         <Image
           src={backdropUrl}
           alt={movie.title}
           fill
-          className="opacity-85"
+          className="opacity-85 object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/70 to-transparent"></div>
       </div>
 
-      {/* Movie Info Section */}
-      <div className="relative z-10 container mx-auto px-4 pt-[50vh]">
-        <div className="flex gap-8">
-          <div>
+      {/* Movie Info Section - Overlapping backdrop */}
+      <div className="relative z-10 container mx-auto px-2 py-8 flex-grow">
+        <div className="flex gap-8 -mt-130">
+          <div className="relative z-20">
             <Image
               src={imageUrl}
               alt={movie.title}
-              className="w-64 h-96 object-cover rounded-lg shadow-lg"
+              className="w-64 h-96 object-cover rounded-lg shadow-2xl"
               width={300}
               height={450}
             />
           </div>
-          <div>
+          <div className="pt-48">
             {/*Movie Info*/}
             <div className="flex-1 text-white">
               <h1 className="font-bold text-4xl">{movie.title}</h1>
