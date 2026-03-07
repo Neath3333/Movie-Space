@@ -2,6 +2,8 @@
 import React from "react";
 import SearchIcon from '@mui/icons-material/Search';
 import { searchMovies } from "@/lib/tmdb";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function SearchBar(){
     const [searchQuery, setSearchQuery] = React.useState("");
@@ -11,12 +13,12 @@ export default function SearchBar(){
     async function handleSearch(){
         setIsLoading(true);
         const results = await searchMovies(searchQuery);
-        setSearchResults(results.results);
+        setSearchResults(results.results.slice(0,5));
         setShowResults(true);
         setIsLoading(false);
     }
     return(
-        <div className="relative">
+        <div className="">
             <input 
             value={searchQuery} 
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -39,10 +41,21 @@ export default function SearchBar(){
             {showResults && searchResults.length > 0 && (
                 <div>
                     {searchResults.map((movie) => (
-                        <div key={movie.id}>
-                            {/* <p>{movie.title}</p>
-                            <p>{new Date(movie.release_date).getFullYear()}</p> */}
-                        </div>
+                        <Link href={`/movies/${movie.id}`} key={movie.id}
+                        className="">
+                            <div className="flex items-center gap-4 p-2 hover:bg-gray-200 rounded-lg ">
+                                <Image
+                                    src={movie.poster_path ? `https://image.tmdb.org/t/p/w200${movie.poster_path}` : "/placeholder.jpg"}
+                                    alt={movie.title}
+                                    width={50}
+                                    height={75}
+                                    className="object-cover rounded"
+                                />
+                                <span>{movie.title}</span>
+                            </div>
+                            
+                        </Link>
+                    
                     ))}
                     <div>
 
