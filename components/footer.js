@@ -27,7 +27,7 @@ export default function Footer() {
 
 
       <div className="text-center border-t border-gray-300 pt-4">
-        <p className="text-gray-600">© 2024 Movie Space. All rights reserved.</p>
+        <p className="text-gray-600">© 2026 Movie Space. All rights reserved.</p>
       </div>
 
     </footer>

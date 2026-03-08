@@ -18,7 +18,7 @@ export default function SearchBar(){
         setIsLoading(false);
     }
     return(
-        <div className="">
+        <div className="relative">
             <input 
             value={searchQuery} 
             onChange={(e) => setSearchQuery(e.target.value)}
