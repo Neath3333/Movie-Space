@@ -45,7 +45,7 @@ export default async function MoviePage({ params }) {
               height={450}
             />
           </div>
-          <div className="pt-48">
+          <div className="pt-0">
             {/*Movie Info*/}
             <div className="flex-1 text-white">
               <h1 className="font-bold text-4xl">{movie.title}</h1>

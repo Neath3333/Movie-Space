@@ -12,7 +12,7 @@ return (
         Trending Movies Today
       </h1>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 bg-white/30 rounded-2xl py-10 px-5">
-        {movies.slice(0, 20).map((movie) => (
+        {movies.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>
