@@ -5,8 +5,10 @@ import MovieCard from "@/components/MovieCard";
 export default async function Home() {
 const data = await getTrendingMovies();
 const movies = data.results;
+
 return (
-    <div className=" px-5 py-8 flex-grow">
+  <div className="px-5 py-8 grow">
+    <div className=" px-5 py-8 grow">
    {/* <MovieCard  /> */}
     <h1 className="text-5xl font-black my-5 text-lime-300 underline">
         Trending Movies Today
@@ -16,6 +18,7 @@ return (
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>
+    </div> 
     </div>
   );
 }
