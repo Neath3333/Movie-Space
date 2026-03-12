@@ -32,7 +32,6 @@ export default async function MoviePage({ params }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/70 to-transparent"></div>
       </div>
-
       {/* Movie Info Section - Overlapping backdrop */}
       <div className="relative z-10 container mx-auto px-2 py-8 flex-grow">
         <div className="flex gap-8 -mt-130">
