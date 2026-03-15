@@ -1,24 +1,18 @@
 'use client'
 
 import Image from 'next/image'
+import {useEffect, useState } from "react"
 import React from 'react'
-import {getUpcomingMovies} from "@/lib/tmdb";   
-// import PropTypes from 'prop-types'
+import {getUpcomingMovies} from "@/lib/tmdb";  
+import PropTypes from 'prop-types'
 
-export default function HeroSection() {
-const  [movie, setMovie] = React.useState(null);
-const backdropUrl = movie?.backdrop_path
- ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
-        : '/placeholder.jpg';
-
-
-React.useEffect(() => {
-    const fetchUpcomingMovies = async () => {
-        const data = await getUpcomingMovies();
-        setMovie(data.results[5]);
-    };
-    fetchUpcomingMovies();
-}, []);
+PropTypes SlideData {
+    id:Number;
+    title:String;
+    image_url: String;
+}
+export default function HeroCarousel({slides}:{slides:SlideData[]}){
+    const [current ,setCurrent ] = useState(0);
 
 return (
     <div className='w-full relative h-[800px]'>

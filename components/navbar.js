@@ -49,10 +49,10 @@ export default function Navbar() {
                   <Link href="/setting/privacy" className="block px-2 py-2 hover:bg-gray-200">
                     Ratings & Watchlist
                   </Link>
-                  <Link href="/setting/theme" className="block px-2 py-2 hover:bg-gray-200">
+                  <Link href="/theme" className="block px-2 py-2 hover:bg-gray-200">
                     Theme
                   </Link>
-                  <Link href="/setting/about" className="block px-2 py-2 hover:bg-gray-200">
+                  <Link href="/about" className="block px-2 py-2 hover:bg-gray-200">
                     About
                   </Link>
                 </div>
