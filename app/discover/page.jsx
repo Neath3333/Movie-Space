@@ -30,7 +30,7 @@ export default async function DiscoverPage() {
           New Release Movies
         </h1>
       </div>
-      <div className="grid grid-cols-5 gap-4 mb-20">
+      <div className="grid grid-cols-5 gap-4 mb-20  ">
         {upComingMovies.slice(0,5).map((movie, index) => (
           <div
             key={`${movie.id}-${index}`}
