@@ -1,7 +1,7 @@
 import React from 'react';
 import { getTrendingMovies } from "@/lib/tmdb";
 import MovieCard from "@/components/MovieCard";
-import HeroSection from "@/components/hero_section";
+// import HeroSection from "@/components/hero_section";
 
 export default async function Home() {
 const data = await getTrendingMovies();
@@ -10,7 +10,7 @@ const movies = data.results.filter((movie, index, self) =>
 
 return (
   <div>
-    <HeroSection/>
+    {/* <HeroSection/> */}
     <div className=" px-5 py-8 grow">
    {/* <MovieCard  /> */}
     <h1 className="text-5xl font-black my-5 text-lime-300 underline">

@@ -9,7 +9,7 @@ export default function MovieCard({ movie }) {
 
   const imageUrl = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-    : "placeholder.jpg";
+    : "/placeholder.jpg";
   return (
     <div className="container mx-auto flex-grow">
       <Link href={`/movies/${movie.id}`}>
