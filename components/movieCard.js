@@ -11,7 +11,7 @@ export default function MovieCard({ movie }) {
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
     : "/placeholder.jpg";
   return (
-    <div className="container mx-auto flex-grow">
+    <div className=" flex-grow">
       <Link href={`/movies/${movie.id}`}>
         <div className="w-48 relative group overflow-hidden rounded-lg mx-auto">
           <Image

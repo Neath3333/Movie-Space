@@ -17,6 +17,7 @@ model User{
   password String?
   image String?
   reviews Review[]
+  likes Like[] 
   createdAt DateTime @default(now())
 }
 
@@ -25,6 +26,7 @@ model Review{
   rating Int 
   content String?
   tmdbId Int
+  movieTitle String
   userId String
   user User @relation(fields: [userId], references: [id])
   createdAt DateTime @default(now())
@@ -32,8 +34,10 @@ model Review{
 
 model Like{
   id String @id @default(cuid())
-  uderId String 
+  userId String 
   tmdbId Int
+  movieTitle String
+  moviePoster String?
   createdAt DateTime @default(now())
 
   user User @relation(fields: [userId], references: [id])
@@ -42,3 +46,5 @@ model Like{
   @@unique([userId,tmdbId])
   @@index([tmdbId])
 }
+
+//after done editing , run (npx prisma migrate dev)
