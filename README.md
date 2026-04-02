@@ -29,6 +29,8 @@ The main goal is to work on a project that called "Movie Space" that allow user 
 **
 
 ## Features
+- Movie Review
+- Get movie recommendation based on user preferences
 
 ## Limitations
 
