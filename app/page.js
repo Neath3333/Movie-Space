@@ -1,6 +1,8 @@
+'use client';
 import React from 'react';
 import { getTrendingMovies } from "@/lib/tmdb";
 import MovieCard from "@/components/MovieCard";
+// import { login } from '@/lib/auth';
 // import HeroSection from "@/components/hero_section";
 
 export default async function Home() {
@@ -22,6 +24,11 @@ return (
         ))}
       </div>
     </div> 
+    <div>
+      {" "}
+      <p>You are not sign in </p>
+      {/* <button onClick={() => login('Google')}>Sign In with Google</button> */}
+    </div>
     </div>
   );
 }

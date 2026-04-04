@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "app/layout.js", "app/page.js"  ],
+, "app/layout.js", "app/page.js", "app/api/auth/[...nextauth]"  ],
   "exclude": ["node_modules"]
 }
