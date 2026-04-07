@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import { getTrendingMovies } from "@/lib/tmdb";
 import MovieCard from "@/components/MovieCard";
