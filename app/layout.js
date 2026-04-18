@@ -1,3 +1,4 @@
+'use client';
 import "./globals.css";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
@@ -5,12 +6,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import Providers from "../components/providers";
 import BackgroundMusic from "../components/BackgroundMusic";
+import { usePathname } from "next/navigation";
 export default function RootLayout({children}) {
+  const pathname = usePathname();
+  const hideNavbar = pathname === "/signin" ;
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col">
         <Providers>
-        <Navbar />
+        { !hideNavbar && <Navbar /> }
         <main>
           {children}
         </main>
