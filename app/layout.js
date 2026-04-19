@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 export default function RootLayout({children}) {
   const pathname = usePathname();
   const hideNavbar = pathname === "/signin" ;
+  const hideFooter = pathname === "/signin";
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col">
@@ -18,7 +19,7 @@ export default function RootLayout({children}) {
         <main>
           {children}
         </main>
-        <Footer />
+        {!hideFooter && <Footer />}
         </Providers>
         <BackgroundMusic />
       </body>
