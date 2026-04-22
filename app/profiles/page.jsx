@@ -16,10 +16,12 @@ export default function ProfilePage() {
         imageUrl : session.user?.image || "https://randomuser.me/api/potraits/men/32.jpg"    
     }
     return (
-        <div className="p-4">
+        <div className="p-4 max-w-7xl mx-auto py-20">
+            <div className="flex flex-col items-center justify-center w-full bg-white/30 p-10 rounded-lg">
             <Profile name={user.name} imageUrl={user.imageUrl} />
-            <div className = "mt-4">
-                <p>Email: {session.user?.email}</p>
+            <div className="mt-4 text-center">
+                <p className="text-xl">Email: {session.user?.email}</p>
+            </div>
             </div>
         </div>
     );
