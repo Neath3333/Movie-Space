@@ -1,16 +1,14 @@
 import React from 'react';
 import { getTrendingMovies } from "@/lib/tmdb";
-import MovieCard from "@/components/MovieCard";
-// import { login } from '@/lib/auth';
-// import HeroSection from "@/components/hero_section";
-
+import MovieCard from "@/components/movieCard";
+             
 export default async function Home() {
 const data = await getTrendingMovies();
 const movies = data.results.filter((movie, index, self) =>                                       
     index === self.findIndex((m) => m.id === movie.id));
 
 return (
-  <div>
+  <div>     
     {/* <HeroSection/> */}
     <div className=" px-5 py-8 grow">
    {/* <MovieCard  /> */}
