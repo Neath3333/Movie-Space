@@ -1,24 +1,10 @@
-// import react from 'react';
+import React from 'react';
 
-// import { PrismaClient } from '@prisma/client';
-// import bcrypt from 'bcrypt';
-
-// const prisma = new PrismaClient();
-
-// async function registerUser(username, email, password){
-//     const hashedPassword = await bcrypt.hash(password, 10);
-    
-//     try { 
-//         const user = await prisma.user.create({
-//             data: {
-//                 username,
-//                 email, 
-//                 password: hashedPassword,
-//             }
-//         });
-//         console.log('User registered:', user.id);
-
-//     }catch (error){
-//         console.error('Error registering user:', error);
-//     }
-// }
+export default function ControllersPage() {
+    return (
+        <div className="p-4">
+            <h1 className="text-2xl font-bold mb-4">Controllers</h1>
+            <p className="text-gray-700">This page is under development.</p>
+        </div>
+    );
+}
