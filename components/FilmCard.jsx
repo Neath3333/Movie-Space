@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PropTypes from "prop-types";
 
-export default function MovieCard({ movie }) {
+export default function FilmCard({ movie }) {
   if (!movie) return null;
 
   const imageUrl = movie.poster_path
@@ -45,7 +45,7 @@ export default function MovieCard({ movie }) {
     </div>
   );
 }
-MovieCard.propTypes = {
+FilmCard.propTypes = {
   movie: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
