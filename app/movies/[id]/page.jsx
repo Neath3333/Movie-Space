@@ -14,10 +14,10 @@ export default async function MoviePage({ params }) {
   //2. poster path
   const imageUrl = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-    : "//public/logo1.jpg";
+    : "/logo1.jpg";
   const backdropUrl = movie.backdrop_path
     ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
-    : "/public/logo1.jpg";
+    : "/logo1.jpg";
   return (
     <div className="relative mx-auto w-[100%]">
       {/* Backdrop Section - Full width with specific height */}
