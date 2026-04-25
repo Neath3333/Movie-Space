@@ -3,7 +3,7 @@ import { getTrendingMovies } from "@/lib/tmdb";
 import React from "react";
 import Image from "next/image";
 import PropTypes from "prop-types";
-import MovieCard from "@/component/MovieCard";
+import MovieCard from "@/components/MovieCard";
 
 export default async function MoviePage({ params }) {
   //1. Fetch movie details using the ID from the URL

@@ -1,7 +1,7 @@
 import React from "react";
 import { getTrendingMovies } from "@/lib/tmdb";
 
-import MovieCard from "@/component/MovieCard";
+import MovieCard from "@/components/MovieCard";
 
 export default async function Home() {
   const data = await getTrendingMovies();
