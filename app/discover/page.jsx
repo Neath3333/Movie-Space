@@ -1,5 +1,5 @@
 import { getPopularMovies, getUpcomingMovies } from "@/lib/tmdb";
-import MovieCard from "@/components/MovieCard";
+import MovieCard from "@/components/moviecard";
 import React from "react";
 export default async function DiscoverPage() {
   const popular = await getPopularMovies();
@@ -31,15 +31,15 @@ export default async function DiscoverPage() {
         </h1>
       </div>
       <div className="grid grid-cols-5 gap-4 mb-20  ">
-        {upComingMovies.slice(0,5).map((movie, index) => (
+        {upComingMovies.slice(0, 5).map((movie, index) => (
           <div
             key={`${movie.id}-${index}`}
             className="text-black text-[18px] hover:scale-105 transition-transform duration-200 p-4xl"
           >
-            <MovieCard movie={movie} />
+            <movieCard movie={movie} />
           </div>
         ))}
-    </div>
+      </div>
     </div>
   );
 }
