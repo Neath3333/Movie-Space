@@ -1,5 +1,5 @@
 import { getPopularMovies, getUpcomingMovies } from "@/lib/tmdb";
-import MovieCard from "@/components/moviecard";
+import MovieCard from "@/component/MovieCard";
 import React from "react";
 export default async function DiscoverPage() {
   const popular = await getPopularMovies();
