@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import SearchBar from "./SearchBar";
@@ -21,7 +20,7 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full flex p-6 bg-[#FFB7C5]/70 text-black items-center justify-center ">
       <Link href="/">
-        <Image src="/logo.png" alt="logo" width={100} height={100} />
+        <img src="/logo.png" alt="logo" width={100} height={100} />
       </Link>
       <Link href="/">
         <h1 className="mr-20 pl-8 text-xl font-bold">MOVIE SPACE</h1>

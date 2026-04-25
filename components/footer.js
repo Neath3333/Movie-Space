@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -9,7 +8,7 @@ export default function Footer() {
       <div className="flex items-center ml-25 mb-4">
 
         <div className="">
-          <Image src="/logo.png" alt="Movie Space Logo" width={80} height={80} />
+          <img src="/logo.png" alt="Movie Space Logo" width={80} height={80} />
         </div>
 
         <div className=" pt-10">
