@@ -3,7 +3,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+    "ignoreDeprecations": "6.0"
   },
   "include": ["**/*.js", "**/*.jsx"],
   "exclude": ["node_modules"]
