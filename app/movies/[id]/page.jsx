@@ -3,7 +3,7 @@ import { getTrendingMovies } from "@/lib/tmdb";
 import React from "react";
 import Image from "next/image";
 import PropTypes from "prop-types";
-import FilmCard from "@/components/FilmCard";
+import FilmCardWithLikes from "@/components/FilmCardWithLikes";
 
 export default async function MoviePage({ params }) {
   //1. Fetch movie details using the ID from the URL
@@ -64,7 +64,7 @@ export default async function MoviePage({ params }) {
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 bg-white/30 rounded-2xl py-10 px-5">
           {movies.slice(0, 10).map((movie) => (
-            <FilmCard key={movie.id} movie={movie} />
+            <FilmCardWithLikes key={movie.id} movie={movie} />
           ))}
         </div>
       </div>

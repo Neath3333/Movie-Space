@@ -1,7 +1,7 @@
 import React from "react";
 import { getTrendingMovies } from "@/lib/tmdb";
 
-import FilmCard from "@/components/FilmCard";
+import FilmCardWithLikes from "@/components/FilmCardWithLikes";
 
 export default async function Home() {
   const data = await getTrendingMovies();
@@ -19,7 +19,7 @@ export default async function Home() {
         </h1>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 bg-white/30 rounded-2xl py-10 px-5">
           {movies.map((movie) => (
-            <FilmCard key={movie.id} movie={movie} />
+            <FilmCardWithLikes key={movie.id} movie={movie} />
           ))}
         </div>
       </div>
