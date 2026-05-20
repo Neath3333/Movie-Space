@@ -24,6 +24,7 @@
     "node-fetch": "^3.3.2",
     "react": "19.2.0",
     "react-dom": "19.2.0",
+    "server-only": "^0.0.1",
     "y": "^0.3.2"
   },
   "devDependencies": {
