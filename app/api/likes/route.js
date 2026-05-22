@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import prisma from "@/lib/prisma";
+import { prisma } from "@/lib/prisma";
 import { auth } from "@/app/auth";
 
 // GET all likes for current user
@@ -63,7 +63,8 @@ export async function POST(request) {
       );
     }
     console.error("Error creating like:", error);
-    return NextResponse.json({ error: "Failed to create like" }, { status: 500 });
+    console.error("Error details:", JSON.stringify(error, null, 2));
+    return NextResponse.json({ error: "Failed to create like", details: error.message }, { status: 500 });
   }
 }
 

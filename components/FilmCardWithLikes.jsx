@@ -11,16 +11,24 @@ export default function FilmCardWithLikes({ movie }) {
   useEffect(() => {
     if (session?.user) {
       fetch("/api/likes")
-        .then((res) => res.json())
+        .then(async (res) => {
+          if (!res.ok) {
+            const errorText = await res.text();
+            console.error("Failed to fetch likes:", res.status, errorText);
+            return [];
+          }
+          return res.json();
+        })
         .then((likes) => {
-          const likedIds = new Set(likes.map((like) => like.tmdbId));
+          // Store as numbers to match movie.id from TMDB
+          const likedIds = new Set(likes.map((like) => Number(like.tmdbId)));
           setLikedMovies(likedIds);
         })
         .catch(console.error);
     }
   }, [session]);
 
-  const isLiked = likedMovies.has(movie.id);
+  const isLiked = likedMovies.has(Number(movie.id));
 
   const handleLikeToggle = (tmdbId, newState) => {
     setLikedMovies((prev) => {

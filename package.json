@@ -10,10 +10,11 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@auth/prisma-adapter": "^2.11.2",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.3.7",
-    "@prisma/client": "^7.3.0",
+    "@prisma/client": "^6.19.3",
     "axios": "^1.13.2",
     "bcrypt": "^6.0.0",
     "cheerio": "^1.1.2",
@@ -33,6 +34,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^17.4.2",
     "eslint": "^9.39.1",
     "eslint-config-next": "^16.2.4",
     "eslint-config-prettier": "^10.1.8",
@@ -41,7 +43,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "globals": "^16.5.0",
     "prettier": "^3.7.3",
-    "prisma": "^7.3.0",
+    "prisma": "^6.19.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
