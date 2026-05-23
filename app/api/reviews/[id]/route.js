@@ -2,9 +2,24 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { auth } from "@/app/auth";
 
+function serializeReview(review) {
+  return {
+    id: review.id,
+    rating: review.rating,
+    content: review.content,
+    authorName: review.authorName,
+    tmdbId: review.tmdbId,
+    movieTitle: review.movieTitle,
+    createdAt: review.createdAt,
+    ...(review.user && { user: review.user }),
+    canManage: true,
+  };
+}
+
 // GET single review
 export async function GET(request, { params }) {
   try {
+    const { id } = await params;
     const session = await auth();
 
     if (!session?.user?.id) {
@@ -12,7 +27,7 @@ export async function GET(request, { params }) {
     }
 
     const review = await prisma.review.findUnique({
-      where: { id: params.id },
+      where: { id },
     });
 
     if (!review) {
@@ -24,7 +39,7 @@ export async function GET(request, { params }) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    return NextResponse.json(review);
+    return NextResponse.json(serializeReview(review));
   } catch (error) {
     console.error("Error fetching review:", error);
     return NextResponse.json({ error: "Failed to fetch review" }, { status: 500 });
@@ -34,6 +49,7 @@ export async function GET(request, { params }) {
 // PUT update review
 export async function PUT(request, { params }) {
   try {
+    const { id } = await params;
     const session = await auth();
 
     if (!session?.user?.id) {
@@ -41,19 +57,36 @@ export async function PUT(request, { params }) {
     }
 
     const body = await request.json();
-    const { rating, content } = body;
+    const { rating, content, authorName } = body;
+    const reviewRating = rating === undefined ? undefined : Number(rating);
+    const displayName =
+      authorName === undefined
+        ? undefined
+        : typeof authorName === "string"
+          ? authorName.trim() || null
+          : null;
 
     // Validation
-    if (rating && (rating < 1 || rating > 10)) {
+    if (
+      reviewRating !== undefined &&
+      (!Number.isInteger(reviewRating) || reviewRating < 1 || reviewRating > 10)
+    ) {
       return NextResponse.json(
         { error: "Rating must be between 1 and 10" },
         { status: 400 }
       );
     }
 
+    if (displayName && displayName.length > 60) {
+      return NextResponse.json(
+        { error: "Name must be 60 characters or less" },
+        { status: 400 }
+      );
+    }
+
     // Check if review exists and belongs to user
     const existingReview = await prisma.review.findUnique({
-      where: { id: params.id },
+      where: { id },
     });
 
     if (!existingReview) {
@@ -66,14 +99,24 @@ export async function PUT(request, { params }) {
 
     // Update review
     const review = await prisma.review.update({
-      where: { id: params.id },
+      where: { id },
       data: {
-        ...(rating !== undefined && { rating }),
+        ...(reviewRating !== undefined && { rating: reviewRating }),
         ...(content !== undefined && { content }),
+        ...(displayName !== undefined && { authorName: displayName }),
+      },
+      include: {
+        user: {
+          select: {
+            name: true,
+            email: true,
+            image: true,
+          },
+        },
       },
     });
 
-    return NextResponse.json(review);
+    return NextResponse.json(serializeReview(review));
   } catch (error) {
     console.error("Error updating review:", error);
     return NextResponse.json({ error: "Failed to update review" }, { status: 500 });
@@ -83,6 +126,7 @@ export async function PUT(request, { params }) {
 // DELETE review
 export async function DELETE(request, { params }) {
   try {
+    const { id } = await params;
     const session = await auth();
 
     if (!session?.user?.id) {
@@ -91,7 +135,7 @@ export async function DELETE(request, { params }) {
 
     // Check if review exists and belongs to user
     const existingReview = await prisma.review.findUnique({
-      where: { id: params.id },
+      where: { id },
     });
 
     if (!existingReview) {
@@ -104,7 +148,7 @@ export async function DELETE(request, { params }) {
 
     // Delete review
     await prisma.review.delete({
-      where: { id: params.id },
+      where: { id },
     });
 
     return NextResponse.json({ message: "Review deleted successfully" });

@@ -60,6 +60,7 @@ model Review {
   id         String   @id @default(cuid())
   rating     Int
   content    String?
+  authorName String?
   tmdbId     Int
   movieTitle String
   userId     String
