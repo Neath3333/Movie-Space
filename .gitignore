@@ -50,3 +50,4 @@ dev.db
 public/*.mp3
 public/*.wav
 public/*.m4a
+.vercel
