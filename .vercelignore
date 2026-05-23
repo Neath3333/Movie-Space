@@ -4,3 +4,6 @@ node_modules
 .env*.local
 dev.db
 *.log
+public/*.mp3
+public/*.m4a
+public/*.wav
