@@ -3,32 +3,52 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-200 px-4 sm:px-6 py-8 sm:py-12 w-full mt-auto">
+    <div className="relative bg-gray-200 mt-auto overflow-hidden">
 
-      <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-6 sm:gap-12 mb-6 sm:mb-8">
+      {/* Footer Card */}
+      <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-sm px-10 py-10 relative z-10 m-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pb-8">
 
-        {/* Logo */}
-        <div className="flex-shrink-0">
-          <img src="/logo.png" alt="Movie Space Logo" width={60} height={60} className="sm:w-[80px] sm:h-[80px]" />
+          {/* Logo + Brand */}
+          <div>
+            <img src="/logo.png" alt="Movie Space Logo" width={60} height={60} className="mb-3" />
+            <p className="text-sm text-gray-500 leading-relaxed">
+              Your go-to destination for discovering and exploring movies.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h2 className="text-sm font-semibold text-gray-900 mb-3">Quick Links</h2>
+            <ul className="space-y-2 text-sm text-gray-500">
+              <li><Link href="/about" className="hover:text-gray-800 transition-colors">About Us</Link></li>
+              <li><Link href="/discover" className="hover:text-gray-800 transition-colors">Discover</Link></li>
+              <li><Link href="/policy" className="hover:text-gray-800 transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="hover:text-gray-800 transition-colors">Terms of Service</Link></li>
+            </ul>
+          </div>
+
+          {/* Placeholder for future column */}
+          <div />
+
         </div>
 
-        {/* Quick Links */}
-        <div>
-          <h2 className="text-base sm:text-xl text-gray-900 mb-3 sm:mb-2 font-semibold">Quick Links</h2>
-          <ul className="flex flex-row sm:flex-col flex-wrap gap-4 sm:gap-2 text-blue-600 text-sm sm:text-base">
-            <li><Link href="/about" className="hover:underline">About Us</Link></li>
-            <li><Link href="/discover" className="hover:underline">Discover</Link></li>
-            <li><Link href="/policy" className="hover:underline">Privacy Policy</Link></li>
-            <li><Link href="/terms" className="hover:underline">Terms of Service</Link></li>
-          </ul>
+        {/* Divider */}
+        <div className="border-t border-gray-100" />
+
+        {/* Bottom Bar */}
+        <div className="pt-6 text-center sm:text-left">
+          <p className="text-xs text-gray-400">© 2026 Movie Space. All rights reserved.</p>
         </div>
       </div>
 
-      {/* Copyright */}
-      <div className="text-center border-t border-gray-300 pt-4">
-        <p className="text-gray-600 text-sm sm:text-base">© 2026 Movie Space. All rights reserved.</p>
+      {/* Background Watermark */}
+      <div className="text-center -mt-8">
+        <span className="text-[10rem] font-black text-gray-300 select-none leading-none tracking-tight whitespace-nowrap">
+          MovieSpace
+        </span>
       </div>
 
-    </footer>
+    </div>
   );
 }

@@ -6,6 +6,16 @@ import Link from "next/link";
 import { Play, Info, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function HeroSection({ featuredMovies = [] }) {
+  // Deduplicate movies by ID to prevent React key warnings
+  const uniqueMovies = React.useMemo(() => {
+    const seen = new Set();
+    return featuredMovies.filter(movie => {
+      if (seen.has(movie.id)) return false;
+      seen.add(movie.id);
+      return true;
+    });
+  }, [featuredMovies]);
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [loadedImages, setLoadedImages] = useState({});
@@ -14,12 +24,12 @@ export default function HeroSection({ featuredMovies = [] }) {
   const containerRef = useRef(null);
 
   const goToNext = useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % featuredMovies.length);
-  }, [featuredMovies.length]);
+    setCurrentIndex((prev) => (prev + 1) % uniqueMovies.length);
+  }, [uniqueMovies.length]);
 
   const goToPrevious = () => {
     setCurrentIndex((prev) =>
-      prev === 0 ? featuredMovies.length - 1 : prev - 1
+      prev === 0 ? uniqueMovies.length - 1 : prev - 1
     );
   };
 
@@ -57,11 +67,11 @@ export default function HeroSection({ featuredMovies = [] }) {
 
   // Auto-advance slides every 5 seconds
   useEffect(() => {
-    if (featuredMovies.length <= 1 || isPaused) return;
+    if (uniqueMovies.length <= 1 || isPaused) return;
 
     const timer = setInterval(goToNext, 5000);
     return () => clearInterval(timer);
-  }, [featuredMovies.length, isPaused, goToNext]);
+  }, [uniqueMovies.length, isPaused, goToNext]);
 
   // Fallback if no movies
   if (!featuredMovies || featuredMovies.length === 0) {
@@ -93,7 +103,7 @@ export default function HeroSection({ featuredMovies = [] }) {
         className="flex h-full transition-transform duration-700 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
-        {featuredMovies.map((movie, idx) => {
+        {uniqueMovies.map((movie, idx) => {
           const backdropUrl = movie.backdrop_path
             ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
             : null;
@@ -194,7 +204,7 @@ export default function HeroSection({ featuredMovies = [] }) {
       </div>
 
       {/* Navigation Arrows - Always visible on mobile, on hover for desktop */}
-      {featuredMovies.length > 1 && (
+      {uniqueMovies.length > 1 && (
         <>
           <button
             onClick={goToPrevious}
@@ -214,9 +224,9 @@ export default function HeroSection({ featuredMovies = [] }) {
       )}
 
       {/* Slide Indicators */}
-      {featuredMovies.length > 1 && (
+      {uniqueMovies.length > 1 && (
         <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 z-20">
-          {featuredMovies.map((_, index) => (
+          {uniqueMovies.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
